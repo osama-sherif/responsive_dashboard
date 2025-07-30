@@ -1,20 +1,21 @@
 import 'package:adaptive_dashboard/models/drawer_item_model.dart';
 import 'package:adaptive_dashboard/utils/app_styles.dart';
+import 'package:adaptive_dashboard/views/widgets/active_and_inactive_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DrawerItem extends StatelessWidget {
-  const DrawerItem({super.key, required this.itemModel});
+  const DrawerItem({
+    super.key,
+    required this.itemModel,
+    required this.isActive,
+  });
   final DrawerItemModel itemModel;
+  final bool isActive;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Color(0xFFFFFFFF),
-      elevation: 0,
-      child: ListTile(
-        leading: SvgPicture.asset(itemModel.image),
-        title: Text(itemModel.title, style: AppStyles.styleRegular16(context)),
-      ),
-    );
+    return isActive
+        ? ActiveDrawerItem(itemModel: itemModel)
+        : InActiveDrawerItem(itemModel: itemModel);
   }
 }
