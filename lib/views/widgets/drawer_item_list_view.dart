@@ -3,14 +3,14 @@ import 'package:adaptive_dashboard/utils/images.dart';
 import 'package:adaptive_dashboard/views/widgets/drawer_item.dart';
 import 'package:flutter/material.dart';
 
-class DrawerItemListView extends StatefulWidget {
-  const DrawerItemListView({super.key});
+class DrawerItemSliverList extends StatefulWidget {
+  const DrawerItemSliverList({super.key});
 
   @override
-  State<DrawerItemListView> createState() => _DrawerItemListViewState();
+  State<DrawerItemSliverList> createState() => _DrawerItemSliverListState();
 }
 
-class _DrawerItemListViewState extends State<DrawerItemListView> {
+class _DrawerItemSliverListState extends State<DrawerItemSliverList> {
   int itemIndex = 0;
   final List<DrawerItemModel> items = const [
     DrawerItemModel(image: Assets.imagesDashboard, title: 'Dashboard'),
@@ -21,9 +21,7 @@ class _DrawerItemListViewState extends State<DrawerItemListView> {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
+    return SliverList.builder(
       itemCount: items.length,
       itemBuilder: (context, index) {
         return Padding(
