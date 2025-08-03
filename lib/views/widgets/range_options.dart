@@ -10,7 +10,7 @@ class RangeOptions extends StatelessWidget {
       padding: EdgeInsets.all(12),
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xFFF1F1F1)),
+          side: BorderSide(width: .5, color: Colors.grey[400]!),
           borderRadius: BorderRadius.circular(12),
         ),
       ),

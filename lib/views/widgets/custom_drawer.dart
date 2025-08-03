@@ -1,11 +1,10 @@
 import 'package:adaptive_dashboard/models/drawer_item_model.dart';
 import 'package:adaptive_dashboard/utils/images.dart';
 import 'package:adaptive_dashboard/views/widgets/active_and_inactive_item.dart';
-import 'package:adaptive_dashboard/views/widgets/drawer_item.dart';
+
 import 'package:adaptive_dashboard/views/widgets/drawer_item_list_view.dart';
 import 'package:adaptive_dashboard/views/widgets/user_info_list_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class CustomDrawer extends StatefulWidget {
   const CustomDrawer({super.key});

@@ -1,5 +1,6 @@
-import 'package:adaptive_dashboard/utils/app_styles.dart';
 import 'package:adaptive_dashboard/views/widgets/all_expenses_header.dart';
+import 'package:adaptive_dashboard/views/widgets/all_expenses_items_row.dart';
+import 'package:adaptive_dashboard/views/widgets/custom_container.dart';
 import 'package:flutter/material.dart';
 
 class AllExpenses extends StatelessWidget {
@@ -7,12 +8,15 @@ class AllExpenses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      decoration: ShapeDecoration(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    return CustomContainer(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AllExpensesHeader(),
+          SizedBox(height: 16),
+          AllExpensesItemsRow(),
+        ],
       ),
-      child: Column(children: [AllExpensesHeader()]),
     );
   }
 }
