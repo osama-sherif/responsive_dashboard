@@ -40,40 +40,26 @@ class _AllExpensesItemsRowState extends State<AllExpensesItemsRow> {
       children: allExpensesItems.asMap().entries.map((e) {
         int index = e.key;
         var item = e.value;
-        return index == 1
-            ? Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    if (itemIndex != index) {
-                      setState(() {
-                        itemIndex = index;
-                      });
-                    }
-                  },
-                  child: Padding(
-                    padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
-                    child: AllExpensesItem(
-                      allExpensesItem: item,
-                      isSelected: itemIndex == index,
-                    ),
-                  ),
-                ),
-              )
-            : Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    if (itemIndex != index) {
-                      setState(() {
-                        itemIndex = index;
-                      });
-                    }
-                  },
-                  child: AllExpensesItem(
-                    allExpensesItem: item,
-                    isSelected: itemIndex == index,
-                  ),
-                ),
-              );
+        return Expanded(
+          child: GestureDetector(
+            onTap: () {
+              if (itemIndex != index) {
+                setState(() {
+                  itemIndex = index;
+                });
+              }
+            },
+            child: Padding(
+              padding: EdgeInsetsGeometry.symmetric(
+                horizontal: index == 1 ? 12 : 0,
+              ),
+              child: AllExpensesItem(
+                allExpensesItem: item,
+                isSelected: itemIndex == index,
+              ),
+            ),
+          ),
+        );
       }).toList(),
     );
   }

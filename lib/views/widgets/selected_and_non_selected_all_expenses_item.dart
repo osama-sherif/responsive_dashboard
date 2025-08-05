@@ -26,18 +26,30 @@ class NonSelectedAllExpesesItem extends StatelessWidget {
             image: allExpensesItem.image,
             imageColor: Color(0xFF4EB7F2),
           ),
-          SizedBox(height: 34),
-          Text(
-            allExpensesItem.title,
-            style: AppStyles.styleSemiBold16(context),
+          SizedBox(height: 17),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpensesItem.title,
+              style: AppStyles.styleSemiBold16(context),
+            ),
+          ),
+          SizedBox(height: 4),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpensesItem.date,
+              style: AppStyles.styleRegular14(context),
+            ),
           ),
           SizedBox(height: 8),
-          Text(allExpensesItem.date, style: AppStyles.styleRegular14(context)),
-          SizedBox(height: 16),
-          Text(
-            maxLines: 1,
-            allExpensesItem.price,
-            style: AppStyles.styleSemiBold24(context),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              maxLines: 1,
+              allExpensesItem.price,
+              style: AppStyles.styleSemiBold24(context),
+            ),
           ),
         ],
       ),
@@ -72,27 +84,35 @@ class SelectedAllExpesesItem extends StatelessWidget {
             image: allExpensesItem.image,
             imageColor: selectedColor,
           ),
-          SizedBox(height: 34),
-          Text(
-            allExpensesItem.title,
-            style: AppStyles.styleSemiBold16(
-              context,
-            ).copyWith(color: selectedColor),
+          SizedBox(height: 17),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpensesItem.title,
+              style: AppStyles.styleSemiBold16(
+                context,
+              ).copyWith(color: selectedColor),
+            ),
+          ),
+          SizedBox(height: 4),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpensesItem.date,
+              style: AppStyles.styleRegular14(
+                context,
+              ).copyWith(color: selectedColor),
+            ),
           ),
           SizedBox(height: 8),
-          Text(
-            allExpensesItem.date,
-            style: AppStyles.styleRegular14(
-              context,
-            ).copyWith(color: selectedColor),
-          ),
-          SizedBox(height: 16),
-          Text(
-            maxLines: 1,
-            allExpensesItem.price,
-            style: AppStyles.styleSemiBold24(
-              context,
-            ).copyWith(color: selectedColor),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpensesItem.price,
+              style: AppStyles.styleSemiBold24(
+                context,
+              ).copyWith(color: selectedColor),
+            ),
           ),
         ],
       ),

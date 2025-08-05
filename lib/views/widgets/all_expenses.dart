@@ -8,7 +8,7 @@ class AllExpenses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomContainer(
+    return CustomBackgroundContainer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

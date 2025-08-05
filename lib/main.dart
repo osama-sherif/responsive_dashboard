@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:adaptive_dashboard/views/dashboard_view.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +15,9 @@ class ResponsiveDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      scrollBehavior: ScrollConfiguration.of(context).copyWith(
+        dragDevices: {PointerDeviceKind.touch, PointerDeviceKind.mouse},
+      ),
       home: DashboardView(),
     );
   }

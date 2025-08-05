@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key, required this.child});
+class CustomBackgroundContainer extends StatelessWidget {
+  const CustomBackgroundContainer({super.key, required this.child});
   final Widget child;
   @override
   Widget build(BuildContext context) {

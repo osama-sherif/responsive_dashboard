@@ -17,8 +17,6 @@ class AllExpensesItemHeader extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 60,
-          width: 60,
           decoration: ShapeDecoration(
             shape: OvalBorder(),
             color: backgroundColor ?? const Color(0xFFFAFAFA),

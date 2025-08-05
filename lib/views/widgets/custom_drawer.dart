@@ -1,4 +1,5 @@
 import 'package:adaptive_dashboard/models/drawer_item_model.dart';
+import 'package:adaptive_dashboard/models/user_info_model.dart';
 import 'package:adaptive_dashboard/utils/images.dart';
 import 'package:adaptive_dashboard/views/widgets/active_and_inactive_item.dart';
 
@@ -22,9 +23,11 @@ class _CustomDrawerState extends State<CustomDrawer> {
         slivers: [
           SliverToBoxAdapter(
             child: UserInfoListTile(
-              image: Assets.imagesAvatar3,
-              title: 'osama',
-              subtitle: '@fakdjf',
+              user: UserInfoModel(
+                image: Assets.imagesAvatar3,
+                title: 'Lekan Okeowo',
+                subtitle: 'demo@gmail.com',
+              ),
             ),
           ),
           SliverToBoxAdapter(child: SizedBox(height: 8)),
