@@ -1,6 +1,6 @@
-import 'package:adaptive_dashboard/views/widgets/all_expenses.dart';
+import 'package:adaptive_dashboard/views/widgets/all_expenses_and_quick_invoice_section.dart';
 import 'package:adaptive_dashboard/views/widgets/custom_drawer.dart';
-import 'package:adaptive_dashboard/views/widgets/quick_invoice.dart';
+import 'package:adaptive_dashboard/views/widgets/my_cards_section.dart';
 import 'package:flutter/material.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
@@ -10,15 +10,13 @@ class DashboardDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: CustomDrawer()),
+        Expanded(child: CustomDrawerSection()),
+        SizedBox(width: 32),
+        Expanded(flex: 3, child: AllExpensesAndQuickInvoiceSection()),
         SizedBox(width: 32),
         Expanded(
-          flex: 3,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [AllExpenses(), SizedBox(height: 24), QuickInvoice()],
-            ),
-          ),
+          flex: 2,
+          child: Column(children: [SizedBox(height: 40), MyCardsSection()]),
         ),
       ],
     );

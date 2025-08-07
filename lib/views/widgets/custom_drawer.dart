@@ -7,14 +7,14 @@ import 'package:adaptive_dashboard/views/widgets/drawer_item_list_view.dart';
 import 'package:adaptive_dashboard/views/widgets/user_info_list_tile.dart';
 import 'package:flutter/material.dart';
 
-class CustomDrawer extends StatefulWidget {
-  const CustomDrawer({super.key});
+class CustomDrawerSection extends StatefulWidget {
+  const CustomDrawerSection({super.key});
 
   @override
-  State<CustomDrawer> createState() => _CustomDrawerState();
+  State<CustomDrawerSection> createState() => _CustomDrawerSectionState();
 }
 
-class _CustomDrawerState extends State<CustomDrawer> {
+class _CustomDrawerSectionState extends State<CustomDrawerSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
