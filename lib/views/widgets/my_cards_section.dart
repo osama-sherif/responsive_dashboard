@@ -4,14 +4,16 @@ import 'package:adaptive_dashboard/views/widgets/dots_indicator.dart';
 import 'package:adaptive_dashboard/views/widgets/my_card_page_view.dart';
 import 'package:flutter/material.dart';
 
-class MyCardsSection extends StatefulWidget {
-  const MyCardsSection({super.key});
+class MyCardsAndTransactionHistorySection extends StatefulWidget {
+  const MyCardsAndTransactionHistorySection({super.key});
 
   @override
-  State<MyCardsSection> createState() => _MyCardsSectionState();
+  State<MyCardsAndTransactionHistorySection> createState() =>
+      _MyCardsAndTransactionHistorySectionState();
 }
 
-class _MyCardsSectionState extends State<MyCardsSection> {
+class _MyCardsAndTransactionHistorySectionState
+    extends State<MyCardsAndTransactionHistorySection> {
   late PageController pageController;
   int currentPageIndex = 0;
 
@@ -22,8 +24,6 @@ class _MyCardsSectionState extends State<MyCardsSection> {
       currentPageIndex = pageController.page!.round();
       setState(() {});
     });
-
-    // TODO: implement initState
     super.initState();
   }
 
@@ -44,6 +44,7 @@ class _MyCardsSectionState extends State<MyCardsSection> {
           MyCardPageView(pageController: pageController),
           const SizedBox(height: 20),
           DotsIndicator(currentPageIndex: currentPageIndex),
+          const Divider(height: 40, color: Color(0xFFF1F1F1)),
         ],
       ),
     );
