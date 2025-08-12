@@ -18,6 +18,7 @@ class _CustomDrawerSectionState extends State<CustomDrawerSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width * .7,
       color: Colors.white,
       child: CustomScrollView(
         slivers: [

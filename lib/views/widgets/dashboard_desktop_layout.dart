@@ -13,21 +13,34 @@ class DashboardDesktopLayout extends StatelessWidget {
       children: [
         Expanded(child: CustomDrawerSection()),
         SizedBox(width: 32),
-        Expanded(flex: 3, child: AllExpensesAndQuickInvoiceSection()),
+        Expanded(
+          flex: 3,
+          child: Padding(
+            padding: EdgeInsets.only(top: 40.0),
+            child: AllExpensesAndQuickInvoiceSection(),
+          ),
+        ),
         SizedBox(width: 32),
         Expanded(
           flex: 2,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: 40),
-                MyCardsAndTransactionHistorySection(),
-                SizedBox(height: 24),
-                IncomeSection(),
-              ],
-            ),
-          ),
+          child: SingleChildScrollView(child: MyCardAndIncomeSection()),
         ),
+      ],
+    );
+  }
+}
+
+class MyCardAndIncomeSection extends StatelessWidget {
+  const MyCardAndIncomeSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(height: 40),
+        MyCardsAndTransactionHistorySection(),
+        SizedBox(height: 24),
+        IncomeSection(),
       ],
     );
   }
