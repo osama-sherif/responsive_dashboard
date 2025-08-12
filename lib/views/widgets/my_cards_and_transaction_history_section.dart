@@ -2,6 +2,7 @@ import 'package:adaptive_dashboard/utils/app_styles.dart';
 import 'package:adaptive_dashboard/views/widgets/custom_container.dart';
 import 'package:adaptive_dashboard/views/widgets/dots_indicator.dart';
 import 'package:adaptive_dashboard/views/widgets/my_card_page_view.dart';
+import 'package:adaptive_dashboard/views/widgets/transaction_history.dart';
 import 'package:flutter/material.dart';
 
 class MyCardsAndTransactionHistorySection extends StatefulWidget {
@@ -45,6 +46,7 @@ class _MyCardsAndTransactionHistorySectionState
           const SizedBox(height: 20),
           DotsIndicator(currentPageIndex: currentPageIndex),
           const Divider(height: 40, color: Color(0xFFF1F1F1)),
+          TransactionHistory(),
         ],
       ),
     );
