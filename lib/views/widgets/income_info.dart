@@ -11,7 +11,7 @@ class IncomeInfoListView extends StatelessWidget {
       color: Color(0xFF208CC8),
     ),
     IncomeInfoItemModel(
-      title: 'Design product ',
+      title: 'Design product',
       percent: '25%',
       color: Color(0xFF4EB7F2),
     ),
@@ -28,12 +28,15 @@ class IncomeInfoListView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        return IncomeInfoItem(infoItemModel: items[index]);
-      },
+    return Column(
+      children: items
+          .map(
+            (e) => Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: IncomeInfoItem(infoItemModel: e),
+            ),
+          )
+          .toList(),
     );
   }
 }
@@ -43,7 +46,28 @@ class IncomeInfoItem extends StatelessWidget {
   final IncomeInfoItemModel infoItemModel;
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return
+    //FittedBox(
+    //   fit: BoxFit.scaleDown,
+    //   child: Row(
+    //     mainAxisAlignment: MainAxisAlignment.start,
+    //     children: [
+    //       Container(
+    //         width: 12,
+    //         height: 12,
+    //         decoration: ShapeDecoration(
+    //           shape: OvalBorder(),
+    //           color: infoItemModel.color,
+    //         ),
+    //       ),
+    //       const SizedBox(width: 12),
+    //       Text(infoItemModel.title, style: AppStyles.styleRegular16(context)),
+    //       const SizedBox(width: 24),
+    //       Text(infoItemModel.percent, style: AppStyles.styleMedium16(context)),
+    //     ],
+    //   ),
+    // );
+    ListTile(
       leading: Container(
         width: 12,
         height: 12,
@@ -53,6 +77,7 @@ class IncomeInfoItem extends StatelessWidget {
         ),
       ),
       title: FittedBox(
+        alignment: Alignment.centerLeft,
         fit: BoxFit.scaleDown,
         child: Text(
           infoItemModel.title,

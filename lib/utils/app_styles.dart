@@ -1,3 +1,4 @@
+import 'package:adaptive_dashboard/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppStyles {
@@ -95,9 +96,7 @@ abstract class AppStyles {
 // Scale factor
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);
-
   double responsiveText = scaleFactor * fontSize;
-
   double lowerLimit = fontSize * .8;
   double upperLimit = fontSize * 1.2;
 
@@ -106,11 +105,11 @@ double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
 
 double getScaleFactor(BuildContext context) {
   double width = MediaQuery.sizeOf(context).width;
-  if (width < 600) {
-    return width / 400;
-  } else if (width < 900) {
-    return width / 700;
-  } else {
+  if (width < SizeConfig.tablet) {
+    return width / 500;
+  } else if (width < SizeConfig.desktop) {
     return width / 1000;
+  } else {
+    return width / 1350;
   }
 }

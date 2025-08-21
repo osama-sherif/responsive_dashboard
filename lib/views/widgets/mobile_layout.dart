@@ -1,5 +1,5 @@
 import 'package:adaptive_dashboard/views/widgets/all_expenses_and_quick_invoice_section.dart';
-import 'package:adaptive_dashboard/views/widgets/dashboard_desktop_layout.dart';
+import 'package:adaptive_dashboard/views/widgets/my_card_and_income_section.dart';
 import 'package:flutter/material.dart';
 
 class MobileLayout extends StatelessWidget {
