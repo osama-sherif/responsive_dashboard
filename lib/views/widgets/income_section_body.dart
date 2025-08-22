@@ -11,7 +11,12 @@ class IncomeSectionBody extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
     return width > SizeConfig.desktop && width < 1750
-        ? DetailedIncomeChart()
+        ? ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.sizeOf(context).width * 2 / 5 - 200,
+            ),
+            child: DetailedIncomeChart(),
+          )
         : Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

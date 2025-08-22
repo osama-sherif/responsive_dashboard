@@ -51,7 +51,7 @@ class _AllExpensesItemsRowState extends State<AllExpensesItemsRow> {
             },
             child: Padding(
               padding: EdgeInsetsGeometry.symmetric(
-                horizontal: index == 1 ? 12 : 0,
+                horizontal: itemIndex == index ? 0 : 8,
               ),
               child: AllExpensesItem(
                 allExpensesItem: item,
